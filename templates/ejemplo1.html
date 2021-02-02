@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mi primera página</title>
+    <style type="text/css">
+        .title {
+            background: grey;
+            color: white;
+            position: absolute;
+            padding: 15px;
+            padding-left: 30px;
+            border: black 1px solid;
+            font-size: 20px;
+            width: 800px;
+            top: 80px;
+            left: 220px;
+        }
+        
+        #dates {
+            position: relative;
+            top: 130px;
+            left: 212px;
+            border: black 1px solid;
+            width: 848px;
+        }
+        
+        th {
+            padding: 10px;
+            border: black 1px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title" id="title">
+        Usuarios
+    </div>
+    <table id="dates">
+        <tr>
+            <th>ID:</th>
+            <th>Nombre:</th>
+            <th>Correo</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <th>{{ user.id }}</th>
+            <th>{{ user.name }}</th>
+            <th>{{ user.email }}</th>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>
