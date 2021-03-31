@@ -28,7 +28,7 @@ def upgrade():
     sa.PrimaryKeyConstraint('id', name='role_pkey')
     )
     op.create_table('group',
-    sa.Column('id', sa.INTEGER(), server_default=sa.text("nextval('group_id_seq'::regclass)"), autoincrement=True, nullable=False),
+    sa.Column('id', sa.INTEGER(), autoincrement=True, nullable=False),
     sa.Column('name', sa.VARCHAR(length=80), autoincrement=False, nullable=True),
     sa.Column('area_id', sa.INTEGER(), autoincrement=False, nullable=True),
     sa.ForeignKeyConstraint(['area_id'], ['area.id'], name='group_area_id_fkey'),

@@ -7,3 +7,4 @@ flask-login
 python-dotenv
 psycopg2-binary
 flask-migrate
+pathlib
