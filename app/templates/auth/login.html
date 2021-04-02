@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block style %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/login.css') }}">
+    <style type="text/css">
+        body{
+            background: url({{url_for('static', filename='images/fondo1.png')}}) no-repeat center center fixed;
+            background-size: cover;
+        }/**/
+    </style>
+{% endblock style %}
+{% block app_content %}
+    <div id="div_content">
+        <div class="container" id="div__login">
+            <div id="log-programming">
+                <img src="{{ url_for('static', filename='images/logo_prog.png') }}" alt="programming" height="100px">
+            </div>
+            <div>
+                <div id="title__login" class="modal-header">
+                    <p class="title" style="text-align: left;">
+                        {{ ('Bienvenido!') }}
+                        <p class="subtitle">
+                            {{ ('Programación-Sinesis') }}
+                        </p>
+                    </p>
+                </div>
+            </div>
+            <div class="title" style="margin-top: -80px; letter-spacing: 2px;">
+                {{ ('Inicia sesión') }}
+            </div>
+            <div id="login-form">
+                <form method="post">
+                    <div>
+                        {{ wtf.form_field(login_form.email) }}
+                        <span class="icon icon-login"><i class="glyphicon glyphicon-user"></i></span>
+                    </div>
+                    <div>
+                        {{ wtf.form_field(login_form.password) }}
+                        <span class="icon icon-login"><i class="glyphicon glyphicon-lock"></i></span>
+                    </div>
+                    <div>
+                        {{ wtf.form_field(login_form.submit, class="btn__default", id="btn-login") }}
+                    </div>
+                </form>
+            </div>
+            <div>
+                <div class="modal-footer" style="text-align: left;">
+                    {{ ('¿No tienes cuenta?') }}&nbsp;&nbsp;<a href="javascript:register_view()"> {{ ('Registrate') }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock app_content %}
+{% block script %}
+    {{ super() }}
+    <script type="text/javascript">
+        function register_view(){
+            $("#div_content").load('{{ url_for("auth.register") }}');
+        }
+    </script>
+{% endblock script %}

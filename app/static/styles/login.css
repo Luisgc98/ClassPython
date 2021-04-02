@@ -1,0 +1,37 @@
+#div__login{
+    margin: auto;
+    padding: 2.5%;
+    height: 550px;
+    width: 500px;
+    position: relative;
+    top: 50px;
+    border-radius: 3px;
+    border: 1px solid black;
+    background-color: white;
+    opacity: .95;
+}
+#title__login{
+    position: relative;
+    left: 110px; bottom: 105px;
+    width: 330px;
+    letter-spacing: 1.5px;
+}
+#login-form{
+    margin-top: 30px;
+}
+#email, 
+#password,
+#user_name,
+#area{
+    width: 380px;
+    margin-left: 35px;
+}
+.icon-login{
+    bottom: 23px;
+}
+#login-form div{
+    margin-bottom: -8px;
+}
+#btn-login{
+    margin: 1.3em 3.3em;
+}

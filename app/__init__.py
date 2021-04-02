@@ -14,12 +14,15 @@ def create_app(config=Config):
 
     bootstrap.init_app(app)
     db.init_app(app)
-    migrate.init_app(app, db)
+    migrate.init_app(app, db, render_as_batch=True)
 
     with app.app_context():
         db.create_all()
 
     from app.main import main
     app.register_blueprint(main)
+
+    from app.auth import auth
+    app.register_blueprint(auth)
 
     return app

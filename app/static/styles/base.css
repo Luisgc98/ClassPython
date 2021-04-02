@@ -1,0 +1,24 @@
+.title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.subtitle{
+    text-align: left;
+    font-weight: bold;
+    font-size: 23px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.icon{
+    position: relative;
+    font-size: 20px;
+}
+.btn__default{
+    width: 350px;
+    border-radius: 5px;
+    background-color: #0F43BB;
+    color: white;
+    letter-spacing: 2px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

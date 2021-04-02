@@ -10,5 +10,5 @@ for(var i=0; i<opc.length; i++){
     a_opc.appendChild(txt_opc);
 
     li_opc.appendChild(a_opc);
-    document.getElementById("nav_example").appendChild(li_opc);
+    //document.getElementById("nav_example").appendChild(li_opc);
 }

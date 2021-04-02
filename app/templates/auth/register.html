@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block style %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/register.css') }}">
+    <style type="text/css">
+        #title__register{
+            position: relative;
+            left: 130px; bottom: 105px;
+            width: 400px;
+            letter-spacing: 1.5px;
+        }
+        #register-form{
+            margin: -6em 3.3em;
+        }
+        #btn-register{
+            margin: 1.3em 3.3em;
+        }
+    </style>
+{% endblock style %}
+{% block app_content %}
+    <div id="div_content">
+        <div class="container" id="div__register">
+            <div id="log-programming">
+                <img src="{{ url_for('static', filename='images/logo_prog.png') }}" alt="programming" height="100px">
+            </div>
+            <div>
+                <div id="title__register" class="modal-header">
+                    <p class="title" style="text-align: left;">
+                        {{ ('Registrate') }}
+                    </p>
+                    <p style="font-size: 12px;">
+                        {{ ('¿Ya tienes cuenta?') }} <a href="javascript:login_view()"> {{ ('Inicia sesión') }}</a>
+                    </p>
+                </div>
+            </div>
+            <div id="register-form">
+                <form method="post">
+                    <div>
+                        {{ wtf.form_field(register_form.email) }}
+                    </div>
+                    <div>
+                        {{ wtf.form_field(register_form.user_name) }}
+                    </div>
+                    <div>
+                        {{ wtf.form_field(register_form.password) }}
+                    </div>
+                    <div>
+                        {{ wtf.form_field(register_form.area) }}
+                    </div>
+                    <div>
+                        {{ wtf.form_field(register_form.submit, class="btn__default", id="btn-register") }}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock app_content %}
+{% block script %}
+    <script type="text/javascript">
+        function login_view(){
+            $("#div_content").load('{{ url_for("auth.login") }}');
+        }
+    </script>
+{% endblock script %}
