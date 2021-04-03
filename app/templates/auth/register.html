@@ -14,6 +14,12 @@
         #btn-register{
             margin: 1.3em 3.3em;
         }
+        .icon-register{
+            bottom: 23px;
+        }
+        #register-form div{
+            margin-bottom: -8px;
+        }
     </style>
 {% endblock style %}
 {% block app_content %}
@@ -36,15 +42,23 @@
                 <form method="post">
                     <div>
                         {{ wtf.form_field(register_form.email) }}
+                        <span class="icon icon-register"><i class="glyphicon glyphicon-envelope"></i></span>
                     </div>
                     <div>
                         {{ wtf.form_field(register_form.user_name) }}
+                        <span class="icon icon-register"><i class="glyphicon glyphicon-user"></i></span>
                     </div>
                     <div>
                         {{ wtf.form_field(register_form.password) }}
+                        <span class="icon icon-register"><i class="glyphicon glyphicon-lock"></i></span>
+                    </div>
+                    <div>
+                        {{ wtf.form_field(register_form.confirm_password) }}
+                        <span class="icon icon-register"><i class="glyphicon glyphicon-remove" id="icon-password-confirm"></i></span>
                     </div>
                     <div>
                         {{ wtf.form_field(register_form.area) }}
+                        <span class="icon icon-register"><i class="glyphicon glyphicon-pawn"></i></span>
                     </div>
                     <div>
                         {{ wtf.form_field(register_form.submit, class="btn__default", id="btn-register") }}

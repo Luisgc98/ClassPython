@@ -21,7 +21,7 @@ def register():
 
     choices = [('', '--Seleccione un área--'),]
     for choice in Area.query.all():
-        choices.append((str(choice.name), str(choice.name)))
+        choices.append((choice.id, str(choice.name)))
     
     register_form.area.choices = choices
 

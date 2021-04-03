@@ -9,6 +9,12 @@
             "name": "example-db",
             "database": "excer_db",
             "username": "luisg"
+        },
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "excer-db",
+            "database": "${workspaceFolder:excer1}/excer.db"
         }
     ]
 }

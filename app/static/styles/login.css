@@ -22,7 +22,8 @@
 #email, 
 #password,
 #user_name,
-#area{
+#area,
+#confirm_password{
     width: 380px;
     margin-left: 35px;
 }

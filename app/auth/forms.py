@@ -10,7 +10,9 @@ class LoginForm(FlaskForm):
 
 class RegisterForm(FlaskForm):
     email = EmailField(label=('Correo electrónico'), validators=[DataRequired()])
-    user_name = StringField(label=('Nombre de Usuario'), validators=[DataRequired()])
+    user_name = StringField(label=('Nombre de usuario'), validators=[DataRequired()])
     password = PasswordField(label=('Contraseña'), validators=[DataRequired()])
+    confirm_password = PasswordField(label=('Confirmar contraseña'), validators=[DataRequired()])
     area = SelectField(label=('Área'), validators=[DataRequired()])
+    theme_code = StringField(label=('Código de Activación'))
     submit = SubmitField(label='Registrar')
