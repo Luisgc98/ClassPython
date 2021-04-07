@@ -17,3 +17,31 @@
     width: 400px;
     letter-spacing: 1.5px;
 }
+
+#email, 
+#password,
+#user_name,
+#area,
+#confirm_password{
+    width: 380px;
+    margin-left: 35px;
+}
+
+#title__register{
+    position: relative;
+    left: 130px; bottom: 105px;
+    width: 400px;
+    letter-spacing: 1.5px;
+}
+#register-form{
+    margin: -6em 3.3em;
+}
+#btn-register{
+    margin: 1.3em 3.3em;
+}
+.icon-register{
+    bottom: 23px;
+}
+#register-form div{
+    margin-bottom: -8px;
+}

@@ -2,27 +2,23 @@
 {% block style %}
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/register.css') }}">
     <style type="text/css">
-        #title__register{
-            position: relative;
-            left: 130px; bottom: 105px;
-            width: 400px;
-            letter-spacing: 1.5px;
-        }
-        #register-form{
-            margin: -6em 3.3em;
-        }
-        #btn-register{
-            margin: 1.3em 3.3em;
-        }
-        .icon-register{
-            bottom: 23px;
-        }
-        #register-form div{
-            margin-bottom: -8px;
-        }
+        body{
+            background: url({{url_for('static', filename='images/fondo1.png')}}) no-repeat center center fixed;
+            background-size: cover;
+        }/**/
     </style>
 {% endblock style %}
 {% block app_content %}
+    {% for message in get_flashed_messages() %}
+        {% if message %}
+            <div class="alert alert-warning" role="alert">
+                <strong>{{message}}</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="{{ ('Close') }}">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endif %}
+    {% endfor %}
     <div id="div_content">
         <div class="container" id="div__register">
             <div id="log-programming">
@@ -39,7 +35,7 @@
                 </div>
             </div>
             <div id="register-form">
-                <form method="post">
+                <form method="post" action="{{ url_for('auth.register') }}">
                     <div>
                         {{ wtf.form_field(register_form.email) }}
                         <span class="icon icon-register"><i class="glyphicon glyphicon-envelope"></i></span>

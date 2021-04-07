@@ -10,6 +10,16 @@
     </style>
 {% endblock style %}
 {% block app_content %}
+    {% for message in get_flashed_messages() %}
+        {% if message %}
+            <div class="alert alert-warning" role="alert">
+                <strong>{{message}}</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="{{ ('Close') }}">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endif %}
+    {% endfor %}
     <div id="div_content">
         <div class="container" id="div__login">
             <div id="log-programming">
@@ -29,7 +39,7 @@
                 {{ ('Inicia sesión') }}
             </div>
             <div id="login-form">
-                <form method="post">
+                <form method="post" action="{{ url_for('auth.login') }}">
                     <div>
                         {{ wtf.form_field(login_form.email) }}
                         <span class="icon icon-login"><i class="glyphicon glyphicon-user"></i></span>
